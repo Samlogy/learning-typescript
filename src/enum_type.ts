@@ -1,5 +1,14 @@
 // ENUMS
 
-const ResourceTypes = { BOOK, AUTHOR, POST }
+enum Direction {
+    Up = "UP",
+    Down = "DOWN",
+    Left = "LEFT",
+    Right = "RIGHT",
+  }
+  
 
-console.log(ResourceTypes.POST)
+console.log('enum Display !')
+for (let i in Direction) {
+    console.log(i)
+}
