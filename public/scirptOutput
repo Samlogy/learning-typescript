@@ -1,0 +1,124 @@
+"use strict";
+// arrays (string, boolean, interger, ...)
+let arrStr = ['a', 'b', 'c', 'd'];
+arrStr.push('e');
+arrStr = [...arrStr, 'f'];
+arrStr[arrStr.length] = 'g';
+console.log(arrStr);
+// array union
+let arrMix = ["a", 0, true];
+console.log(arrMix);
+// NB: any type of previous ones can be pushed inside the array
+// String
+let message;
+message = "the message goes here ...";
+console.log(message);
+// Number
+let age;
+age = 25;
+console.log(age);
+// Boolean
+let active;
+active = true;
+console.log(active);
+// Any (regular js variable type)
+let variableType;
+variableType = true;
+variableType = "hello string variable !";
+console.log(variableType);
+// NB: we can assign a value to variable & the data type will be automatiquely assigned to it
+class Person {
+    // public: accessible anywhere else, 
+    // private: inside class only, 
+    // readonly: anywhere else but can't be changed
+    constructor(n, a, e, z) {
+        this.name = n;
+        this.age = a;
+        this.email = e;
+        this.salary = z;
+    }
+    greeting() {
+        return `Hello my name is ${this.name} and i'm ${this.age} years old, my email address: ${this.email}, my current salary is: ${this.salary}`;
+    }
+}
+const p1 = new Person('Sam', 25, 'sam@gmail.com', 50000);
+const p2 = new Person('admin', 25, 'admin@gmail.com', 150000);
+console.log(p1.greeting());
+let persons = [];
+persons.push(p1);
+persons.push(p2);
+console.log("persons: ", persons);
+for (let person of persons) {
+    console.log(person.greeting());
+}
+// interfaces can be used on obj, classes, 
+let some;
+// some is a variable of type stringOrNumber
+// DOM access / Type casting
+const form = document.querySelector("form");
+const email = document.querySelector("#email"); // casting
+const password = document.querySelector("#password");
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(`Email: ${email.value}, Password: ${password.value}`);
+});
+// functions
+function calcSum(a, b) {
+    return a + b;
+}
+console.log(calcSum(10, 12));
+// function signature (define params, types, & return type)
+let calcSum2;
+let calcSum3;
+// C: parameter is optional
+let greet;
+greet = (c) => {
+    console.log(`Hello guys i'm a greet function ! --> ${c}`);
+};
+greet("Sam ");
+let mike;
+mike = {
+    uuid: "q4s6d4sqdqs5d4",
+    name: "sam007",
+    age: 25,
+    email: "007@gmail.com",
+    speak(text) {
+        console.log(text);
+    },
+    reply(text) {
+        console.log(text);
+    }
+};
+console.log(`i'm a ${mike.name} ${typeof mike} decraled with an interface type and here is my data: ${mike}`);
+mike.speak("alright what are we going to do ?");
+mike.reply("obvious great things !");
+let kim = {
+    name: "sam",
+    age: 25,
+    skills: ["dev", "opthimistic", "trustfull", "handsome", "intelligent", "and much more..."]
+};
+// NB: person obj must always have name & age of the same type, can not add new attribute to person (immutable)
+console.log("person: ", kim);
+console.log("print out some changes ....");
+console.log("this file & all files on thos folder will be compiled by tsc module with watch option into the public folder");
+// tuple
+let arrTuple = ['key', 12];
+console.log(arrTuple);
+// NB: we can change both string & number at the same time
+arrTuple = ['string value', 102];
+console.log(arrTuple);
+// Union (can be either a string or number)
+let year;
+year = 2021;
+year = "2021";
+console.log(year);
+// void
+const functionVoidType = (a, b, c) => {
+    console.log(`My name is: ${b} and my age is ${a} and this is an optional parameter ${c ? c : ""} !`);
+};
+functionVoidType(25, 'Samy', 'another value');
+let voidType = () => {
+    console.log('hello !\nclassique void type function !');
+};
+voidType();
+// this function returns nothing it's a void type funciton
